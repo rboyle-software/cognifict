@@ -22,9 +22,11 @@ class CognifictApp extends StatelessWidget {
       child: MaterialApp(
         title: 'Cognifict',
         theme: cognifictTheme,
-        home: const DashboardScreen(),
+        home: const InputScreen(),
         routes: {
+          '/input': (context) => const InputScreen(),
           '/settings': (context) => const SettingsScreen(),
+          '/dashboard': (context) => const DashboardScreen(),
         },
         debugShowCheckedModeBanner: false,
       ),

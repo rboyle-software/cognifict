@@ -33,6 +33,7 @@ class SpeechService with ChangeNotifier {
     _speech.stop();
     _isListening = false;
     notifyListeners();
+    print(recognizedText);
   }
 
   // Callback function to process the recognized speech
