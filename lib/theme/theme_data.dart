@@ -3,16 +3,21 @@ import 'package:google_fonts/google_fonts.dart';
 
 // Define the custom colors for Cognifict
 class CognifictColors {
-  static const Color primaryBlue = Color(0xFF1E3A8A); // Primary blue
-  static const Color tealGreen = Color(0xFF116466); // Secondary teal
-  static const Color softBlue = Color(0xFFDCEEF5); // Light background blue
-  static const Color mossGreen = Color(0xFF91B247); // Accent moss green
-  static const Color brightYellow = Color(0xFFFFC857); // Accent yellow
-  static const Color mutedOrange = Color(0xFFFF8C42); // Accent muted orange
-  static const Color offWhite = Color(0xFFF5F5F5); // Off-white for background
-  static const Color coolGray = Color(0xFF4A5568); // Gray for text
-  static const Color skyBlue = Color(0xFF3182CE); // Secondary blue
-  static const Color forestGreen = Color(0xFF228B22); // Success green
+  static const Color darkBlue = Color.fromRGBO(7, 12, 18, 1); // Primary blue
+  static const Color mediumBlue = Color.fromRGBO(3, 26, 44, 1); // Primary blue
+  static const Color luminousBlue = Color.fromRGBO(18, 37, 51, 1); // Primary blue
+  static const Color lighterBlue = Color.fromRGBO(31, 73, 105, 1);
+  static const Color skyBlue = Color.fromARGB(255, 49, 130, 206); // Secondary blue
+  static const Color softBlue = Color.fromARGB(255, 158, 213, 235); // Light background blue
+  static const Color darkGreen = Color.fromARGB(255, 12, 62, 35); // Dark green
+  static const Color mediumGreen = Color.fromARGB(255, 7, 91, 46); // Secondary green
+  static const Color forestGreen = Color.fromARGB(255, 34, 139, 34); // Success green
+  static const Color mossGreen = Color.fromARGB(255, 112, 139, 54); // Accent moss green
+  static const Color goldenYellow = Color.fromRGBO(237, 203, 79, 1);
+  static const Color brightYellow = Color.fromARGB(255, 255, 200, 87); // Accent yellow
+  static const Color mutedOrange = Color.fromARGB(255, 255, 140, 66); // Accent muted orange
+  static const Color offWhite = Color.fromARGB(255, 245, 245, 245); // Off-white for background
+  static const Color coolGray = Color.fromARGB(255, 74, 85, 104); // Gray for text
 }
 
 ThemeData cognifictTheme = ThemeData(
@@ -20,24 +25,21 @@ ThemeData cognifictTheme = ThemeData(
   colorScheme: const ColorScheme(
     brightness: Brightness.light, // Light theme
 
-    primary: CognifictColors.primaryBlue, // Primary color
-    onPrimary: Colors.white, // Text/icons on primary color
+    primary: CognifictColors.mediumBlue, // Primary color
+    onPrimary: Color.fromARGB(255, 12, 89, 30), // Text/icons on primary color
 
-    secondary: CognifictColors.tealGreen, // Secondary color
+    secondary: CognifictColors.mediumGreen, // Secondary color
     onSecondary: Colors.white, // Text/icons on secondary color
-
-    // background: CognifictColors.offWhite, // Background color
-    // onBackground: CognifictColors.coolGray, // Text/icons on background
-
-    surface: CognifictColors.softBlue, // Card/Surface background color
-    onSurface: CognifictColors.coolGray, // Text/icons on surface color
-
-    error: CognifictColors.brightYellow, // Error or warning
-    onError: Colors.black, // Text/icons on error color
 
     // Optional tertiary color for minor accents
     tertiary: CognifictColors.skyBlue,
     onTertiary: Colors.white,
+
+    surface: CognifictColors.luminousBlue, // Card/Surface background color
+    onSurface: CognifictColors.darkGreen, // Text/icons on surface color
+
+    error: CognifictColors.brightYellow, // Error or warning
+    onError: Colors.black, // Text/icons on error color
 
     // Shades for success or positive actions
     primaryContainer: CognifictColors.mossGreen,
@@ -50,14 +52,14 @@ ThemeData cognifictTheme = ThemeData(
 
   // Customizing the AppBar theme
   appBarTheme: const AppBarTheme(
-    backgroundColor: CognifictColors.primaryBlue,
-    foregroundColor: Colors.white, // Icons/Text in AppBar
+    backgroundColor: CognifictColors.mediumBlue,
+    foregroundColor: CognifictColors.mossGreen, // Icons/Text in AppBar
   ),
 
   // Button theme with Material 3 style
   elevatedButtonTheme: ElevatedButtonThemeData(
     style: ElevatedButton.styleFrom(
-      backgroundColor: CognifictColors.tealGreen,
+      backgroundColor: CognifictColors.mediumGreen,
       foregroundColor: Colors.white, // Text color
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(8), // Rounded corners
@@ -84,7 +86,7 @@ ThemeData cognifictTheme = ThemeData(
     focusedBorder: OutlineInputBorder(
       borderRadius: BorderRadius.circular(8.0),
       borderSide: const BorderSide(
-        color: CognifictColors.primaryBlue,
+        color: CognifictColors.mediumBlue,
         width: 2.0,
       ),
     ),
@@ -101,12 +103,11 @@ ThemeData cognifictTheme = ThemeData(
     bodyLarge: TextStyle(color: CognifictColors.coolGray),
     bodyMedium: TextStyle(color: CognifictColors.coolGray),
     bodySmall: TextStyle(color: CognifictColors.coolGray),
-    headlineMedium: TextStyle(color: CognifictColors.primaryBlue, fontWeight: FontWeight.bold),
-    headlineSmall: TextStyle(color: CognifictColors.tealGreen),
+    headlineMedium: TextStyle(color: CognifictColors.mediumBlue, fontWeight: FontWeight.bold),
+    headlineSmall: TextStyle(color: CognifictColors.mediumGreen),
     labelMedium: TextStyle(color: CognifictColors.skyBlue),
   ),
 );
-
 
 TextTheme textTheme = TextTheme(
   displayLarge: const TextStyle(
