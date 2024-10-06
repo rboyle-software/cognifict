@@ -6,7 +6,7 @@ class CognifictColors {
   static const Color darkBlue = Color.fromRGBO(7, 12, 18, 1); // Primary blue
   static const Color mediumBlue = Color.fromRGBO(3, 26, 44, 1); // Primary blue
   static const Color luminousBlue = Color.fromRGBO(18, 37, 51, 1); // Primary blue
-  static const Color lighterBlue = Color.fromRGBO(31, 73, 105, 1);
+  static const Color lighterBlue = Color(0xFF1F4969);
   static const Color skyBlue = Color.fromARGB(255, 49, 130, 206); // Secondary blue
   static const Color softBlue = Color.fromARGB(255, 158, 213, 235); // Light background blue
   static const Color darkGreen = Color.fromARGB(255, 12, 62, 35); // Dark green
