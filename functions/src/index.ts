@@ -2,9 +2,10 @@ import {onRequest} from "firebase-functions/v2/https"; // Import for HTTP trigge
 import * as logger from "firebase-functions/logger"; // Optional: New logger from v2
 import {Request, Response} from "express"; // Optional: Express types for TypeScript
 import axios from "axios";
-import {defineSecret} from "firebase-functions/params";
+import {defineString} from "firebase-functions/params";
 
-const OPEN_AI_KEY = defineSecret("OPEN_AI_KEY");
+// const OPEN_AI_KEY = defineSecret("OPEN_AI_KEY");
+const OPEN_AI_KEY_VALUE = defineString("OPEN_AI_KEY_VALUE");
 /* eslint max-len: "off" */
 // Initialize Firebase Functions V2
 export const chatGptQuery = onRequest(async (req: Request, res: Response): Promise<void> => {
@@ -26,7 +27,8 @@ export const chatGptQuery = onRequest(async (req: Request, res: Response): Promi
 
   // Get the query text from the request body
   const query = req.body.query;
-  const openAiKey = OPEN_AI_KEY.value();
+  // const openAiKey = OPEN_AI_KEY.value();
+  const openAiKeyValue = OPEN_AI_KEY_VALUE.value();
 
   if (!query) {
     res.status(400).send({error: "No query provided"});
@@ -35,7 +37,7 @@ export const chatGptQuery = onRequest(async (req: Request, res: Response): Promi
 
   // OpenAI API settings
   const apiUrl = "https://api.openai.com/v1/chat/completions";
-  const apiKey = `${openAiKey}`; // Define the API key as a string
+  const apiKey = `${openAiKeyValue}`; // Define the API key as a string
 
   try {
     // Send the query to the OpenAI API
