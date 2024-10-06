@@ -1,21 +1,21 @@
 {
   "project_info": {
-    "project_number": "104316612933",
-    "project_id": "cogniflect-4aed2",
-    "storage_bucket": "cogniflect-4aed2.appspot.com"
+    "project_number": "592683010608",
+    "project_id": "cognifict",
+    "storage_bucket": "cognifict.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:104316612933:android:b5bc8e0be934bd84738e2c",
+        "mobilesdk_app_id": "1:592683010608:android:03e5c0ebd1706ffedcbbf5",
         "android_client_info": {
-          "package_name": "com.cognifict.app"
+          "package_name": "com.glorified.cognifict"
         }
       },
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyDLj0auvwbdYr8m4rn8PLC0nO2THZ3Ot5c"
+          "current_key": "AIzaSyCvVqo5BuJjyrbx6cTpHitXwuhCQETiOEo"
         }
       ],
       "services": {

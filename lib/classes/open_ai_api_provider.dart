@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:dio/dio.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-
 
 class OpenAIApiProvider with ChangeNotifier {
   String _responseText = ""; // Store the API response
@@ -13,40 +11,34 @@ class OpenAIApiProvider with ChangeNotifier {
   // Getter for loading state
   bool get isLoading => _isLoading;
 
-
-  // Function to send the query to the ChatGPT API (or another API)
+  // Function to send the query to the Firebase Cloud Function
   Future<void> sendQueryToApi(String query) async {
     _isLoading = true;
     notifyListeners();
 
-    const apiUrl = "https://api.openai.com/v1/chat/completions";
-    var apiKey = dotenv.env['OPENAI_API_KEY'];
+    // Replace with your Firebase Cloud Function URL
+    // const cloudFunctionUrl = "https://us-central1-cognifict.cloudfunctions.net/chatGptQuery";
+    const cloudFunctionUrl = "https://chatgptquery-ob3hxmvg4q-uc.a.run.app";
 
     // Create Dio HTTP client
     final dio = Dio();
     dio.options.headers = {
-      "Authorization": "Bearer $apiKey",
       "Content-Type": "application/json",
     };
 
     try {
-      // Send a POST request to the API
-      final response = await dio.post(apiUrl, data: {
-        "model": "gpt-4o", // Specify the model, e.g., gpt-3.5-turbo or gpt-4
-        "messages": [
-          {"role": "system", "content": "You are a wise and experienced friend with deep knowledge of human behavior. Your tone is subtly formal. Your advice and suggestions are presented tactfully and with love for the user."},
-          {"role": "user", "content": '$query \n Please let me know if I am exhibiting cognitive bias and if so, which type(s) of cognitive bias'},
-        ],
+      // Send a POST request to the Cloud Function
+      final response = await dio.post(cloudFunctionUrl, data: {
+        "query": query,
       });
 
-      // Extract response content
-      _responseText = response.data['choices'][0]['message']['content'];
+      // Extract response content from the Cloud Function response
+      _responseText = response.data['response'];
     } catch (e) {
       _responseText = "Error: Failed to connect to the API.";
       throw Exception("Failed to connect to the API: $e");
     } finally {
       _isLoading = false;
-      print('RESPONSE TEXT: ' + _responseText);
       notifyListeners(); // Notify listeners after the API call completes
     }
   }
