@@ -1,1 +1,57 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"cogniflect-4aed2","appId":"1:104316612933:android:b5bc8e0be934bd84738e2c","fileOutput":"android/app/google-services.json"}},"dart":{"lib/firebase_options.dart":{"projectId":"cogniflect-4aed2","configurations":{"android":"1:104316612933:android:b5bc8e0be934bd84738e2c","ios":"1:104316612933:ios:5a132176227c4acc738e2c","web":"1:104316612933:web:b300b18a0e503587738e2c"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "cogniflect-4aed2",
+          "appId": "1:104316612933:android:b5bc8e0be934bd84738e2c",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "cogniflect-4aed2",
+          "configurations": {
+            "android": "1:104316612933:android:b5bc8e0be934bd84738e2c",
+            "ios": "1:104316612933:ios:5a132176227c4acc738e2c",
+            "web": "1:104316612933:web:b300b18a0e503587738e2c"
+          }
+        }
+      }
+    }
+  },
+  "hosting": {
+    "public": "build/web",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ]
+  },
+  "emulators": {
+    "singleProjectMode": true
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "ignore": [
+        "node_modules",
+        ".git",
+        "firebase-debug.log",
+        "firebase-debug.*.log",
+        "*.local"
+      ],
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run lint",
+        "npm --prefix \"$RESOURCE_DIR\" run build"
+      ]
+    }
+  ]
+}
