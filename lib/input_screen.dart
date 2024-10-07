@@ -35,6 +35,8 @@ class _InputScreenState extends State<InputScreen> {
       body: Center(
         child: SingleChildScrollView(
           child: Container(
+            width: 600,
+            height: 1000,
             decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.topLeft,

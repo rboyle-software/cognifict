@@ -38,6 +38,7 @@ class OpenAIApiProvider with ChangeNotifier {
       _responseText = "Error: Failed to connect to the API.";
       throw Exception("Failed to connect to the API: $e");
     } finally {
+      print('API call completed! $_responseText');
       _isLoading = false;
       notifyListeners(); // Notify listeners after the API call completes
     }
