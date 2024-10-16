@@ -12,7 +12,12 @@
           "package_name": "com.glorified.cognifict"
         }
       },
-      "oauth_client": [],
+      "oauth_client": [
+        {
+          "client_id": "592683010608-jn65e6jsp2eahv03gg2adjofr550ol15.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
       "api_key": [
         {
           "current_key": "AIzaSyCvVqo5BuJjyrbx6cTpHitXwuhCQETiOEo"
@@ -20,7 +25,19 @@
       ],
       "services": {
         "appinvite_service": {
-          "other_platform_oauth_client": []
+          "other_platform_oauth_client": [
+            {
+              "client_id": "592683010608-jn65e6jsp2eahv03gg2adjofr550ol15.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "592683010608-hm0hi0bb38qq3j78ba5cmvf1ucp3oddp.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.glorified.cognifict"
+              }
+            }
+          ]
         }
       }
     }
