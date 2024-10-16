@@ -181,12 +181,6 @@ class DynamicSalutationState extends State<DynamicSalutation> {
     }
   }
 
-  // Function to display a new random greeting
-  // void _refreshGreeting() {
-  //   setState(() {
-  //     _selectRandomGreeting();
-  //   });
-  // }
 
   @override
   Widget build(BuildContext context) {
